@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<title>Sessiong Tracking using HttpSession Object</title>
+	<script>
+		function validateForm(frm)
+		{
+			var nn=frm.name.value.trim();
+			if(nn.length==0)
+			{
+				alert('Name required');
+				frm.name.focus();
+				return false;
+			}
+			var v='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz .';
+			var e;
+			e=0;
+			while(e<nn.length)
+			{
+				if(v.indexOf(nn.charAt(e))==-1)
+				{
+					alert("Invalid characters in name, only alphabets, space and . are allowed.");
+					frm.name.focus();
+					return false;
+				}
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<form action='/SessionTracking4/aaa' onsubmit='return validateForm(this)'>
+			Name
+			<input type='text' id='name' name='name'>
+			<br>
+			<button type='submit'>Next</button>
+		</form>		
+	</center>
+</body>
+</html>
