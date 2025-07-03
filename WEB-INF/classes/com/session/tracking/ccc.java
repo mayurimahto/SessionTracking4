@@ -9,32 +9,9 @@ public class ccc extends HttpServlet
 	{
 		try
 		{
-			Cookie cookies[]=request.getCookies();
-			String name="";
-			String city="";
-			if(cookies!=null)
-			{
-				Cookie c;
-				int x;
-				for(x=0;x<cookies.length;x++)
-				{
-					c=cookies[x];
-					if(c.getName().equals("name"))
-					{
-						name=c.getValue();
-						break;
-					}
-				}
-				for(x=0;x<cookies.length;x++)
-				{
-					c=cookies[x];
-					if(c.getName().equals("city"))
-					{
-						city=c.getValue();
-						break;
-					}
-				}
-			}
+			HttpSession ss=request.getSession();
+			String name=(String)ss.getAttribute("name"); // what we are passing inside String is of type Object hence need to typecaste it to String in our example
+			String city=(String)ss.getAttribute("city");
 			System.out.println("Data Arrived");
 			System.out.println("Name : "+name);
 			System.out.println("City : "+city);
