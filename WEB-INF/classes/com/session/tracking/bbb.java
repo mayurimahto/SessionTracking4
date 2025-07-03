@@ -13,6 +13,7 @@ public class bbb extends HttpServlet
 			String name=request.getParameter("name");
 			String city=request.getParameter("city");
 			HttpSession ss=request.getSession();
+			//ss.setMaxInactiveInterval;
 			ss.setAttribute("name", name);
 			ss.setAttribute("city", city);
 			System.out.println("Data Arrived");
