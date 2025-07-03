@@ -45,13 +45,13 @@ public class ccc extends HttpServlet
 			pw.println("<html lang='en'>");
 			pw.println("<head>");
 			pw.println("<meta charset='utf-8'>");
-			pw.println("<title>Session Tracking using URL Cookies</title>");
+			pw.println("<title>Session Tracking using HttpSession Object</title>");
 			pw.println("</head>");
 			pw.println("<body>");
 			pw.println("Data Saved<br>");
 			pw.println("Name : "+name+"<br>");
 			pw.println("City : "+city+"<br>");
-			pw.println("<form action='/SessionTracking3/index.html'>");
+			pw.println("<form action='/SessionTracking4/index.html'>");
 			pw.println("<button type='submit'>Ok</button>");
 			pw.println("</form>");
 			pw.println("</body>");
