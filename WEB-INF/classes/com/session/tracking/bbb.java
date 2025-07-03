@@ -12,10 +12,9 @@ public class bbb extends HttpServlet
 		{
 			String name=request.getParameter("name");
 			String city=request.getParameter("city");
-			Cookie c1=new Cookie("name", URLEncoder.encode(name));
-			response.addCookie(c1);
-			Cookie c2=new Cookie("city", URLEncoder.encode(city));
-			response.addCookie(c2);
+			HttpSession ss=request.getSession();
+			ss.setAttribute("name", name);
+			ss.setAttribute("city", city);
 			System.out.println("Data Arrived");
 			System.out.println("Name : "+name);
 			System.out.println("City : "+city);
